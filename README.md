@@ -1,3 +1,46 @@
+### 项目简介  
+基于openwrt官方源码加入fros插件编译，调整部分代码用于适配fros功能  
+
+### 当前支持的芯片架构（持续更新中）  
+- X86_64
+- MT7621
+MT7981系列的产品请通过https://github.com/destan19/immortalwrt-mt798x-fros编译  
+
+### 如何编译  
+编译方法和openwrt通用方法类似，但编译前需要开启fros插件配置  
+1. 更新feeds  
+```
+./scripts/feeds update -a
+./scripts/feeds install -a
+```
+2. 选择编译的产品   
+通过make menuconfig选择，和openwrt通用做法一样  
+
+3. 开启fros插件编译配置  
+以下为命令行方式，当然也可以通过make menuconfig选择   
+```
+echo "CONFIG_PACKAGE_fros=y" >>.config
+echo "CONFIG_PACKAGE_fros_files=y" >>.config
+echo "CONFIG_PACKAGE_luci-app-fros=y" >>.config
+make defconfig
+```
+4. 开始编译固件  
+- 单核编译
+```
+make V=s
+```
+- 多核编译
+首次不要用多核编译，可能会报错，编译成功过一次后可以通过多核编译
+```
+make V=s -j4
+```
+
+### 固件说明  
+编译出来的固件是和openwrt完全兼容的，只是增加了fros插件。
+
+
+---
+
 ![OpenWrt logo](include/logo.png)
 
 OpenWrt Project is a Linux operating system targeting embedded devices. Instead
