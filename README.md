@@ -4,7 +4,7 @@
 ### 当前支持的芯片架构（持续更新中）  
 - X86_64
 - MT7621
-MT7981系列的产品请通过https://github.com/destan19/immortalwrt-mt798x-fros编译  
+MT7981系列的产品请通过`https://github.com/destan19/immortalwrt-mt798x-fros` 编译  
 
 ### 如何编译  
 编译方法和openwrt通用方法类似，但编译前需要开启fros插件配置  
