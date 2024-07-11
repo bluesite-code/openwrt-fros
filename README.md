@@ -2,8 +2,9 @@
 基于openwrt官方源码加入fros插件编译，调整部分代码用于适配fros功能  
 
 ### 当前支持的芯片架构（持续更新中）  
-- X86_64
+- X86_64 
 - MT7621
+
 MT7981系列的产品请通过`https://github.com/destan19/immortalwrt-mt798x-fros` 编译  
 
 ### 如何编译  
